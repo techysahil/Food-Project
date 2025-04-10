@@ -10,4 +10,6 @@ public class FoodWasteManagementApplication {
 		SpringApplication.run(FoodWasteManagementApplication.class, args);
 	}
 
+
+
 }
