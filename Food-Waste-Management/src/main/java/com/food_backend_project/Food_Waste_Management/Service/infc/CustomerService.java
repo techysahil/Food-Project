@@ -11,4 +11,8 @@ public interface CustomerService {
     String addCustomer(CustomerDTO customerDTO);
     LoginResponse loginCustomer(LoginDTO loginDTO);
 
+    Customer getCustomerById(int customerId);
+
+    void updateCustomer(int customerId, CustomerDTO customerDTO);
+
 }
