@@ -62,4 +62,25 @@ public class CustomerIMPL implements CustomerService {
         }
 
     }
+
+    @Override
+    public Customer getCustomerById(int customerId) {
+        Customer customer= customerRepo.findByCustomerId(customerId);
+        return customer;
+    }
+
+    @Override
+    public void updateCustomer(int customerId, CustomerDTO customerDTO) {
+        Customer customerUpdated = customerRepo.findByCustomerId(customerId);
+        customerUpdated.setCustomerName(customerDTO.getCustomerName());
+        customerUpdated.setPhone(customerDTO.getPhone());
+        customerUpdated.setAddress(customerDTO.getAddress());
+        customerUpdated.setOrganization(customerDTO.getOrganization());
+        customerUpdated.setRole(customerDTO.getRole());
+        String password = customerDTO.getPassword();
+        if (password != null && !password.isEmpty()) {
+            customerUpdated.setPassword(this.passwordEncoder.encode(password));
+        }
+        customerRepo.save(customerUpdated);
+    }
 }
