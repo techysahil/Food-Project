@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Logo from "../Assets/logo.jpg";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import Box from "@mui/material/Box";
@@ -14,27 +14,55 @@ import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
 import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
+import LoginIcon from "@mui/icons-material/Login";
 
-const Navbar = () => {
+const Navbar = ({ onLoginClick }) => {
   const [openMenu, setOpenMenu] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const navbar = document.querySelector("nav");
+      if (window.scrollY > 50) {
+        navbar.classList.add("transparent", "scrolled");
+      } else {
+        navbar.classList.remove("transparent", "scrolled");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const menuOptions = [
     {
       text: "Home",
       icon: <HomeIcon />,
+      link: "#home",
     },
     {
       text: "About",
       icon: <InfoIcon />,
+      link: "#about",
     },
     {
       text: "Testimonials",
       icon: <CommentRoundedIcon />,
+      link: "#testimonials",
     },
     {
       text: "Contact",
       icon: <PhoneRoundedIcon />,
+      link: "#contact",
+    },
+    {
+      text: "Sign-in/Sign-up",
+      icon: <LoginIcon />,
+      isbutton: true,
     },
   ];
+
   return (
     <nav>
       <div className="nav-logo-container">
@@ -45,7 +73,17 @@ const Navbar = () => {
         <a href="">About</a>
         <a href="">Testimonials</a>
         <a href="">Contact</a>
-        <button className="primary-button">Sign-in/Sign-up</button>
+        <button className="primary-button" onClick={onLoginClick}>
+          Sign-in/Sign-up
+        </button>
+      </div>
+      <div className="navbar-menu-container">
+ 
+        {menuOptions.map((item) => (
+          <a key={item.text} href={item.link}>
+            {item.text}
+          </a>
+        ))}
       </div>
       <div className="navbar-menu-container">
         <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
@@ -60,7 +98,7 @@ const Navbar = () => {
           <List>
             {menuOptions.map((item) => (
               <ListItem key={item.text} disablePadding>
-                <ListItemButton>
+                <ListItemButton component= "a" href={item.link}>
                   <ListItemIcon>{item.icon}</ListItemIcon>
                   <ListItemText primary={item.text} />
                 </ListItemButton>

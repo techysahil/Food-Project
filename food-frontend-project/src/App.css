@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Reem Kufi", sans-serif !important;
+  scroll-behavior: smooth;
 }
 img {
   max-width: 100%;
@@ -13,10 +14,13 @@ img {
   width: 85vw;
   max-width: 1900px;
   margin: 0rem auto;
+  overflow: visible;
 }
 body {
   max-width: 100%;
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -28,7 +32,26 @@ nav {
   align-items: center;
   justify-content: space-between;
   min-height: 90px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #004e42;
+  z-index: 1000;
+  box-shadow: #004E42;
+  margin: 0;
+  padding: 0 1rem;
 }
+
+nav.transparent {
+  background-color:  #004e4254 !important;
+  transition: background-color 0.3s ease-in-out;
+}
+
+nav.scrolled .navbar-links-container a {
+  color: #004E42 !important; 
+}
+
 .navbar-menu-container {
   display: none;
 }
@@ -37,16 +60,18 @@ nav {
   max-width: 100%;
   height: auto;
   object-fit: contain;
-  max-height: 100px; /* Adjust the height as needed */
+  max-height: 100px;
 }
 
 .navbar-links-container a {
   margin-right: 3rem;
   text-decoration: none;
-  color: black;
+  color: white;
   font-size: 1.1rem;
   font-weight: 600;
+  transition: color 0.3s ease-in-out;
 }
+
 .primary-button {
   padding: 0.9rem 1.75rem;
   background-color: #004E42;
@@ -57,6 +82,7 @@ nav {
   cursor: pointer;
   font-weight: 600;
   transition: 0.2s;
+  color: white
 }
 
 
@@ -70,19 +96,18 @@ nav {
 .home-banner-container {
   position: relative;
   display: flex;
-  padding-top: 3rem;
+  padding-top: 10rem;
 }
 .home-bannerImage-container {
   position: absolute;
   top: -100px;
   right: -170px;
   z-index: -2;
-  max-width: 700px;
 
 }
 .home-image-section {
-  max-width: 600px;
-  flex: 1;
+  max-width: 1000px;
+  flex: 0.9;
 }
 .home-text-section {
   flex: 1;
@@ -94,7 +119,6 @@ nav {
 .primary-heading {
   font-size: clamp(2rem, 5vw, 4rem);
   color: #004E42;
-  /* line-height: 5rem; */
   max-width: 600px;
 }
 .primary-text {
@@ -184,6 +208,7 @@ nav {
   justify-content: center;
   flex-direction: column;
   margin: 6rem 0rem;
+  z-index: -2;
 }
 .contact-form-container {
   background-color: white;
@@ -260,6 +285,11 @@ nav {
   font-size: 1.1rem;
   margin: 2rem 0rem;
 }
+.testimonial-section-bottom img {
+  max-width: 100px; /* Adjust the size as needed */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 50%; /* Optional: Make it circular if needed */
+}
 .testimonials-stars-container svg {
   margin: 0rem 0.25rem;
   font-size: 1.5rem;
@@ -283,6 +313,11 @@ nav {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.work-section-info img {
+  max-width: 150px;
+  height: auto; 
+  margin: 1rem 0; 
 }
 .work-section-info {
   width: 290px;

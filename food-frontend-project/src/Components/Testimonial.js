@@ -1,23 +1,25 @@
 import React from "react";
-import ProfilePic from "../Assets/john-doe-image.png";
+import ProfilePic from "../Assets/OIP (1).jpg";
 import { AiFillStar } from "react-icons/ai";
 
 const Testimonial = () => {
   return (
+    <section id={"testimonials"}>
     <div className="work-section-wrapper">
       <div className="work-section-top">
         <p className="primary-subheading">Testimonial</p>
         <h1 className="primary-heading">What They Are Saying</h1>
         <p className="primary-text">
-          Lorem ipsum dolor sit amet consectetur. Non tincidunt magna non et
-          elit. Dolor turpis molestie dui magnis facilisis at fringilla quam.
+        Our platform has transformed the way we connect donors and receivers,
+        making a real impact on reducing food waste and feeding those in need.
         </p>
       </div>
       <div className="testimonial-section-bottom">
         <img src={ProfilePic} alt="" />
         <p>
-          Lorem ipsum dolor sit amet consectetur. Non tincidunt magna non et
-          elit. Dolor turpis molestie dui magnis facilisis at fringilla quam.
+        "As an NGO dedicated to fighting hunger, we have found this platform to be invaluable.
+        We are proud to be part of this initiative that not only reduces food waste but also fosters 
+        a spirit of generosity and support."
         </p>
         <div className="testimonials-stars-container">
           <AiFillStar />
@@ -26,9 +28,10 @@ const Testimonial = () => {
           <AiFillStar />
           <AiFillStar />
         </div>
-        <h2>John Doe</h2>
+        <h2>NGO</h2>
       </div>
     </div>
+    </section>
   );
 };
 
