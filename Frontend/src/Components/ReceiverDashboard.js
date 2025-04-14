@@ -49,11 +49,11 @@ function Receiver() {
   ]);
 
   useEffect(() => {
-    // Fetch data from the API
+   
     fetch("http://localhost:8085/api/v1/foodItem/getFood")
       .then((response) => response.json())
       .then((data) => {
-        setDonations(data); // Update the state with the fetched data
+        setDonations(data); 
       })
       .catch((error) => {
         console.error("Error fetching donations:", error);
