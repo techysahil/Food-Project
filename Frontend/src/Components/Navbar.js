@@ -1,4 +1,4 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
+
 import React, { useState, useEffect } from "react";
 import Logo from "../Assets/logo.jpg";
 import { HiOutlineBars3 } from "react-icons/hi2";
