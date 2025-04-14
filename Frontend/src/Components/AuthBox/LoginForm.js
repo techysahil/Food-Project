@@ -17,7 +17,7 @@ const LoginForm = () => {
 
       if (response.ok) {
         const data = await response.json();
-        // assuming backend returns something like { role: "Donor" }
+        
         if (data.role === "Donor") {
           navigate("/donor-dashboard");
         } else if (data.role === "Receiver") {
