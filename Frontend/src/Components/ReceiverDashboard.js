@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
- // Import the CSS file for styling
+ 
 
 function Receiver() {
   const [donations, setDonations] = useState([
