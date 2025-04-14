@@ -10,7 +10,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   const handleDonateClick = () => {
-    // navigate("/authbox");
+    
     setShowAuth(true);
   };
   return (
