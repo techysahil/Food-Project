@@ -10,7 +10,7 @@ import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 import AuthBox from "./Components/AuthBox/AuthContainer";
 
-// Dummy pages for role-based redirection (create these files later)
+
 import DonorDashboard from "./Components/DonorDashboard";
 import ReceiverDashboard from "./Components/ReceiverDashboard";
 
