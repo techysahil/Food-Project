@@ -39,8 +39,8 @@ const Navbar = ({ onLoginClick }) => {
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
-      const navbarHeight = document.querySelector("nav").offsetHeight; // Get the navbar height
-      const sectionPosition = section.offsetTop - navbarHeight; // Adjust for navbar height
+      const navbarHeight = document.querySelector("nav").offsetHeight;
+      const sectionPosition = section.offsetTop - navbarHeight; 
       window.scrollTo({ top: sectionPosition, behavior: "smooth" });
     }
   };
