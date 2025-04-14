@@ -48,7 +48,7 @@ const SignupForm = () => {
         <option value="Donor">Donor</option>
         <option value="Receiver">Receiver</option>
       </select>
-      <input type="password" name="password" placeholder="Password" onChange={handleChange} required /> {/* Added new field */}
+      <input type="password" name="password" placeholder="Password" onChange={handleChange} required /> 
       <button type="submit">Sign Up</button>
     </form>
   );
