@@ -20,12 +20,17 @@ function Donor() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      const formattedData = {
+        ...formData,
+        expiryDate: new Date(formData.expiryDate).toISOString().split("T")[0],
+      };
+  
       const response = await fetch("http://localhost:8085/api/v1/foodItem/donateFood", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(formattedData),
       });
 
       if (response.ok) {
