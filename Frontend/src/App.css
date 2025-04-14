@@ -286,9 +286,9 @@ nav.scrolled .navbar-links-container a {
   margin: 2rem 0rem;
 }
 .testimonial-section-bottom img {
-  max-width: 100px; /* Adjust the size as needed */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 50%; /* Optional: Make it circular if needed */
+  max-width: 100px; 
+  height: auto;
+  border-radius: 50%; 
 }
 .testimonials-stars-container svg {
   margin: 0rem 0.25rem;
@@ -476,7 +476,7 @@ nav.scrolled .navbar-links-container a {
 
 .receivers-container {
   padding: 20px;
-  margin-top: 120px; /* Adjust this value to match the height of your navbar */
+  margin-top: 120px; 
   text-align: center;
 }
 
@@ -521,7 +521,7 @@ nav.scrolled .navbar-links-container a {
 
 .donor-form-container {
   padding: 20px;
-  margin-top: 120px; /* Adjust this value to match the height of your navbar */
+  margin-top: 120px; 
   text-align: center;
 }
 
